@@ -1,7 +1,7 @@
 # EPMerge
 Merges PDF documents provided by [Epost (Business)](https://www.deutschepost.de/de/e/epost/geschaeftskunden/digitale-kopie.html) in a single document.
 
-# Status
+## Status
 |OS|Build Status|
 |--|------------|
 |Linux|[![Build Status](https://dev.azure.com/valeriusmattfeld/EPMerge/_apis/build/status/valerius21.epost-pdf-merge?branchName=master&jobName=Linux)](https://dev.azure.com/valeriusmattfeld/EPMerge/_build/latest?definitionId=3&branchName=master)|
