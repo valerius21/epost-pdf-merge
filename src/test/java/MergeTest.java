@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 // TODO test remaining methods
 
+
 class MergeTest {
     private File sp = getResFile("src/test/resources/merge");
     private Merge m = new Merge(sp.listFiles());
