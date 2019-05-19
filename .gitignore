@@ -1,0 +1,12 @@
+#.gitignore
+.gradle/
+#.idea/gradle.xml
+#.idea/misc.xml
+#.idea/workspace.xml
+build/
+gradle/
+gradlew
+gradlew.bat
+settings.gradle
+src/main/resources/
+.idea
