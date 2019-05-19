@@ -1,40 +1,45 @@
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class MergeTest {
+import java.io.File;
+import java.io.IOException;
 
-    @org.junit.Before
-    public void setUp() throws Exception {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+// TODO test remaining methods
+
+class MergeTest {
+    private File sp = new File("src/test/resources/merge");
+    private Merge m = new Merge(sp.listFiles());
+
+    @BeforeEach
+    void setUp() {
+        assert (sp.exists());
     }
 
-    @org.junit.After
-    public void tearDown() throws Exception {
+    @AfterEach
+    void tearDown() {
     }
 
-    @org.junit.Test
-    public void getSrcFolder() {
+    @Test
+    void equals1() {
+        Merge x = new Merge(sp.listFiles());
+        assertEquals(m, x);
     }
 
-    @org.junit.Test
-    public void setSrcFolder() {
+    @Test
+    void hashCode1() { // TODO refactor
+        int hc = m.hashCode();
+        for (int i = 0; i < 1000; i++) {
+            assertEquals(hc, m.hashCode());
+        }
     }
 
-    @org.junit.Test
-    public void equals1() {
-    }
-
-    @org.junit.Test
-    public void hashCode1() {
-    }
-
-    @org.junit.Test
-    public void mergePack() {
-    }
-
-    @org.junit.Test
-    public void mergePack1() {
-    }
-
-    @org.junit.Test
-    public void makePacks() {
+    @Test
+    void mergePack() throws IOException {
+        m.mergePack("20190402_MB77777-000187");
+        assertTrue(new File("src/test/resources/merge/merged_20190402_MB77777-000187.pdf").exists());
     }
 }
