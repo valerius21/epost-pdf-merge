@@ -8,13 +8,6 @@ class XmlDeserializerTest {
     @DisplayName("Setting up test; loading dummy.xml")
     @BeforeEach
     void setUp() {
-//        ClassLoader classLoader = getClass().getClassLoader();
-//        try (InputStream inputStream = classLoader.getResourceAsStream("dummy.xml")) {
-//            String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
-//            System.out.println(result);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @DisplayName("Testing Kundennummer...")
