@@ -11,8 +11,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 // TODO test remaining methods
 
 class MergeTest {
-    private File sp = new File("src/test/resources/merge");
+    private File sp = getResFile("src/test/resources/merge");
     private Merge m = new Merge(sp.listFiles());
+
+    @Test
+    File getResFile(String filename) {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        File xmlDummy = new File(classLoader.getResource(filename).getFile());
+        assertTrue(xmlDummy.exists());
+
+        return xmlDummy;
+    }
 
     @BeforeEach
     void setUp() {
@@ -40,6 +49,7 @@ class MergeTest {
     @Test
     void mergePack() throws IOException {
         m.mergePack("20190402_MB77777-000187");
-        assertTrue(new File("src/test/resources/merge/merged_20190402_MB77777-000187.pdf").exists());
+        File ex = getResFile("merge/merged_20190402_MB77777-000187.pdf");
+        assertTrue(ex.exists());
     }
 }
