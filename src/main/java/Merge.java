@@ -94,7 +94,7 @@ public class Merge {
      * @param folder source srcFolder
      * @return ArrayList containing the xml files.
      */
-    private ArrayList<File> filterForXml(File[] folder) {
+    ArrayList<File> filterForXml(File[] folder) {
         ArrayList<File> filteredList = new ArrayList<>();
         for (File f : folder) if (f.getName().endsWith(".xml")) filteredList.add(f);
 
